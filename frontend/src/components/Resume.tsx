@@ -4,7 +4,7 @@ export default function Resume() {
     <section className="py-8">
       <h2 className="text-3xl font-bold mb-4">Resume</h2>
       <a
-        href="/resume.pdf"
+        href="/NinadShingare_resume.pdf"
         download
         className="bg-blue-600 text-white px-4 py-2 rounded"
       >

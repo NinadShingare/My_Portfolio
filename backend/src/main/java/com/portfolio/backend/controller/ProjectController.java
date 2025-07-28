@@ -9,13 +9,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/projects")
-@CrossOrigin("*")
+@CrossOrigin(origins = "http://localhost:3000/")// can use @CrossOrigin(origins = "http://localhost:3000/") for dev
 public class ProjectController {
     @Autowired
     private ProjectRepository repo;
 
     @GetMapping
     public List<Project> getProjects() {
+        //System.out.println("get products change");
         return repo.findAll();
     }
 
