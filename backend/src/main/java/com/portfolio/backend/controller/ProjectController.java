@@ -12,17 +12,17 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000/")// can use @CrossOrigin(origins = "http://localhost:3000/") for dev
 public class ProjectController {
     @Autowired
-    private ProjectRepository repo;
+    private ProjectRepository ProjRepo;
 
     @GetMapping
     public List<Project> getProjects() {
         //System.out.println("get products change");
-        return repo.findAll();
+        return ProjRepo.findAll();
     }
 
     @PostMapping
     public Project addProject(@RequestBody Project project){
-        return repo.save(project);
+        return ProjRepo.save(project);
     }
 }
 
