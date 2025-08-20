@@ -7,6 +7,7 @@ type Project = {
   title: string;
   description: string;
   github: string;
+  link: string;
   techStack: string;
 };
 
@@ -48,6 +49,18 @@ export default function Projects() {
           >
             GitHub
           </a>
+          <p>
+          {proj.link && (
+                    <a
+                      href={proj.link}
+                      className="text-blue-600 underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Link
+                    </a>
+          )}
+      </p>
         </div>
       ))}
     </section>

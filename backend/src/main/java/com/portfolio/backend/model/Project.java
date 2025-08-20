@@ -3,7 +3,6 @@ package com.portfolio.backend.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 
 @Entity
@@ -14,6 +13,7 @@ public class Project {
     private String title;
     private String description;
     private String github;
+    private String link;
     private String techStack;
     // getters/setters
 
@@ -47,6 +47,14 @@ public class Project {
 
     public void setGithub(String github) {
         this.github = github;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 
     public String getTechStack() {
