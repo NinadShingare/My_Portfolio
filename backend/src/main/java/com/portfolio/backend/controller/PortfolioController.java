@@ -18,22 +18,23 @@ public class PortfolioController {
     private final MessagesRepository messageRepo;
 
     @Autowired
-    public PortfolioController(ProjectRepository projectRepo,MessagesRepository messageRepo){
+    public PortfolioController(ProjectRepository projectRepo, MessagesRepository messageRepo) {
         this.projectRepo = projectRepo;
         this.messageRepo = messageRepo;
     }
+
     @GetMapping("/projects")
     public List<Project> getProjects() {
         return projectRepo.findAll();
     }
 
     @PostMapping("/projects")
-    public Project addProject(@RequestBody Project project){
+    public Project addProject(@RequestBody Project project) {
         return projectRepo.save(project);
     }
 
     @PostMapping("/contact")
-    public Messages addMessage(@RequestBody Messages messages){
+    public Messages addMessage(@RequestBody Messages messages) {
         return messageRepo.save(messages);
     }
 }
