@@ -1,6 +1,6 @@
 // components/Skills.tsx
 export default function Skills() {
-  const skills = ['Java', 'Python','Spring Boot', 'Next.js', 'Docker', 'PostgreSQL', 'Kafka', 'Git'];
+  const skills = ['Java', 'Python', 'Spring Boot', 'Node.js', 'MySQL', 'MongoDB', 'Next.js', 'Docker', 'PostgreSQL', 'Kafka', 'Git', 'Linux'];
 
   return (
     <section className="py-8">
