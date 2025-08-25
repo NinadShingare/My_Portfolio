@@ -1,14 +1,13 @@
 package com.portfolio.backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Skills {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "skillname")
     private String skillname;
 
     public Long getId() {
@@ -19,11 +18,11 @@ public class Skills {
         this.id = id;
     }
 
-    public String getSkill() {
+    public String getSkillname() {
         return skillname;
     }
 
-    public void setSkill(String skillname) {
+    public void setSkillname(String skillname) {
         this.skillname = skillname;
     }
 }
