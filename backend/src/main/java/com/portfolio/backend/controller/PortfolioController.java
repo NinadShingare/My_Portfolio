@@ -26,7 +26,7 @@ public class PortfolioController {
         this.messageRepo = messageRepo;
         this.skillsRepo = skillsRepo;
     }
-
+//mapping for projects
     @GetMapping("/projects")
     public List<Project> getProjects() {
         return projectRepo.findAll();
@@ -36,12 +36,12 @@ public class PortfolioController {
     public Project addProject(@RequestBody Project project) {
         return projectRepo.save(project);
     }
-
+    //mapping for contact
     @PostMapping("/contact")
     public Messages addMessage(@RequestBody Messages messages) {
         return messageRepo.save(messages);
     }
-
+    //mapping for skills
     @GetMapping("/skills")
     public List<Skills> getSkills() {
         return skillsRepo.findAll();
