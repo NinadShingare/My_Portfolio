@@ -25,7 +25,7 @@ services:
       - ./frontend:/app
       - /app/node_modules  # prevents overwriting container modules
     environment:
-      NEXT_PUBLIC_API_BASE_URL: http://localhost:8080
+      NEXT_PUBLIC_API_BASE_URL: http://backend:8080
       CHOKIDAR_USEPOLLING: "true"  # Needed for file change detection on Windows/macOS
     command: npm run dev
 

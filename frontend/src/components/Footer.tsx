@@ -4,7 +4,7 @@ import { EnvelopeIcon } from "@heroicons/react/24/outline";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-6 mt-12">
+    <footer className="bg-gray-900 text-gray-300 py-6">
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <p className="text-sm">&copy; {new Date().getFullYear()} Ninad Shingare. All rights reserved.</p>
         <div className="flex space-x-6 mt-4 md:mt-0">
