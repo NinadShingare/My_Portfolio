@@ -1,24 +1,14 @@
-import axios from 'axios';
-import { Project, Skill } from '@/types';
+   import axios from 'axios'
+   import { Project, Skill } from '@/types'
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://backend:8080';  // Use the correct environment variable
+   const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://backend:8080/api'
 
-export async function getProjects(): Promise<Project[]> {
-  try {
-    const res = await axios.get(`${API_BASE}/api/projects`);
-    return res.data;
-  } catch (error) {
-    console.error('Failed to fetch projects:', error);
-    return [];  // Fallback to empty array if there's an error
-  }
-}
+   export async function getProjects(): Promise<Project[]> {
+     const res = await axios.get(`${API_BASE}/projects`)
+     return res.data
+   }
 
-export async function getSkills(): Promise<Skill[]> {
-  try {
-    const res = await axios.get(`${API_BASE}/api/skills`);
-    return res.data;
-  } catch (error) {
-    console.error('Failed to fetch skills:', error);
-    return [];  // Fallback to empty array if there's an error
-  }
-}
+   export async function getSkills(): Promise<Skill[]> {
+     const res = await axios.get(`${API_BASE}/skills`)
+     return res.data
+   }
