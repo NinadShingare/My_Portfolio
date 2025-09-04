@@ -11,7 +11,7 @@ export default function ContactForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     try {
-      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/contact`, { name, email, message })
+      await axios.post(`/api/contact`, { name, email, message })
       setStatus('Message sent successfully!')
       setName(''); setEmail(''); setMessage('')
     } catch {
