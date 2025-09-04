@@ -5,7 +5,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     <div className="border rounded-xl p-4 shadow hover:shadow-lg transition">
       <h3 className="text-xl font-semibold">{project.title}</h3>
       <p className="text-gray-600 dark:text-gray-400">{project.description}</p>
-      <p className="p-4">
+      <p className="px-4">
       <a
         href={project.link}
         target="_blank"
