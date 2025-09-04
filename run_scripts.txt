@@ -1,3 +1,4 @@
+docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build
 docker compose -f docker-compose.yml -f docker-compose.override.yml up
 powershell -ExecutionPolicy Bypass -File watch-backend.ps1
 docker compose down

@@ -23,11 +23,15 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - ./frontend:/app
-      - /app/node_modules  # prevents overwriting container modules
+      - /app/node_modules
     environment:
-      NEXT_PUBLIC_API_BASE_URL: http://backend:8080
-      CHOKIDAR_USEPOLLING: "true"  # Needed for file change detection on Windows/macOS
+      #NEXT_PUBLIC_API_BASE_URL: http://backend:8080
+      CHOKIDAR_USEPOLLING: "true"
+      CHOKIDAR_INTERVAL: 1000   # Poll every 1s for changes (needed on Windows/macOS)
     command: npm run dev
+    ports:
+      - "3000:3000"
+
 
   postgres:
     image: postgres:14

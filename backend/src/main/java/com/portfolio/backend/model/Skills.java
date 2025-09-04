@@ -9,6 +9,7 @@ public class Skills {
     private Long id;
     @Column(name = "skillname")
     private String skillname;
+    private String level;
 
     public Long getId() {
         return id;
@@ -24,6 +25,14 @@ public class Skills {
 
     public void setSkillname(String skillname) {
         this.skillname = skillname;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
     }
 }
 
