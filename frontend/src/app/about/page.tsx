@@ -1,6 +1,6 @@
 export default function AboutPage() {
   return (
-    <section className="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
+    <section className="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8 glass-container">
       {/* Left Side - Description */}
       <div className="md:w-2/3">
         <h2 className="text-3xl font-extrabold mb-4">About Me</h2>
