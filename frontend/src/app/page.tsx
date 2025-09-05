@@ -21,7 +21,7 @@ export default function HomePage() {
         </p>
         <a
           href="https://drive.google.com/file/d/1s3us55MDrABGHtl2EHQPOaYv3o5o1ZKx/view?usp=sharing"
-          className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg shadow-lg hover:scale-105 transition"
+          className="inline-block bg-gradient-to-r from-blue-800 to-purple-800 text-white px-6 py-2 rounded-lg shadow-lg hover:scale-105 transition"
         >
           Download Resume
         </a>

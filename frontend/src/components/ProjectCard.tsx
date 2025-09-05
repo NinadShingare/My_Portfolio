@@ -11,7 +11,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1 mt-2 rounded-lg shadow-lg hover:scale-105 transition"
+          className="inline-block bg-gradient-to-r from-blue-800 to-purple-800 text-white px-4 py-1 mt-2 rounded-lg shadow-lg hover:scale-105 transition"
         >
           View
         </a>
@@ -19,14 +19,11 @@ export default function ProjectCard({ project }: { project: Project }) {
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1 mt-2 rounded-lg shadow-lg hover:scale-105 transition"
+          className="inline-block bg-gradient-to-r from-blue-800 to-purple-800 text-white px-4 py-1 mt-2 rounded-lg shadow-lg hover:scale-105 transition"
         >
           GitHub
         </a>
       </p>
-
-
-
     </div>
   )
 }

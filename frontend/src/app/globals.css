@@ -9,7 +9,7 @@
 }
 
 body {
-  background: var(--background) url('/images/Portfolio_Bg.jpg') no-repeat center center fixed;
+  background: var(--background) url('/images/Portfolio_Bg1.jpg') no-repeat center center fixed;
   background-size: cover;
   color: var(--foreground);
   font-family: 'Inter', sans-serif;
