@@ -1,32 +1,27 @@
 export default function HomePage() {
   return (
-    <section className="text-center py-16">
-      <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
-      <p className="text-lg text-gray-600 dark:text-gray-300">
-        I am a Software Developer passionate about building modern web applications.
-      </p>
-      <p>
-        Recent MCA graduate from Dr. D.Y. Patil Institute of Management and Research, Pune, with hands-on internship
-        experience at PRGX India Pvt. Ltd. and Vyosim TechLab. Passionate about backend development and full-stack web
-        application engineering.
-      </p>
-      <p>
-        Skilled in developing robust applications using Java, Spring Boot, Python, Django, Node.js, and frontend
-        technologies like HTML, CSS, JavaScript, and Shadcn UI. Proficient in working with MySQL, PostgreSQL, MongoDB,
-        and tools such as Git, Docker, Postman and more. I enjoy building practical, scalable software solutions and
-        continuously expanding my technical skill set. Actively seeking full-time opportunities in backend or full-stack
-        development roles.
-      </p>
-      <p>
-        If you are interested in contacting me in regards to a position with your company please email me at
-        nvshingare67@gmail.com, or feel free to connect me on LinkedIn.
-      </p>
-
-      <div className="mt-6">
+    <section className="flex flex-col items-center justify-center py-16">
+      <div className="glass-container max-w-3xl text-center">
+        <h1 className="text-5xl font-extrabold mb-4 pb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent animate-fade-in">
+          Welcome to My Portfolio
+        </h1>
+        <p className="text-lg text-gray-300 mb-6">
+          I am a Software Developer passionate about building modern web applications.
+        </p>
+        <p className="mb-4">
+          Recent MCA graduate with hands-on experience at PRGX India Pvt. Ltd. and Vyosim TechLab.
+          Passionate about backend development and full-stack web application engineering.
+        </p>
+        <p className="mb-4">
+          Skilled in Java, Spring Boot, Python, Django, Node.js, and frontend technologies.
+          Experienced with MySQL, PostgreSQL, MongoDB, Git, Docker, and more.
+        </p>
+        <p className="mb-6">
+          If you'd like to contact me: <span className="font-semibold">nvshingare67@gmail.com</span>
+        </p>
         <a
-          href="https://drive.google.com/file/d/1s3us55MDrABGHtl2EHQPOaYv3o5o1ZKx/view?usp=sharing" // <-- Place your resume file in `public/resume/`
-          download
-          className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition"
+          href="https://drive.google.com/file/d/1s3us55MDrABGHtl2EHQPOaYv3o5o1ZKx/view?usp=sharing"
+          className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg shadow-lg hover:scale-105 transition"
         >
           Download Resume
         </a>

@@ -3,7 +3,7 @@ export default function AboutPage() {
     <section className="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
       {/* Left Side - Description */}
       <div className="md:w-2/3">
-        <h2 className="text-3xl font-semibold mb-4">About Me</h2>
+        <h2 className="text-3xl font-extrabold mb-4">About Me</h2>
         <p>
           Recent MCA graduate from Dr. D.Y. Patil Institute of Management and Research, Pune, with hands-on internship
           experience at PRGX India Pvt. Ltd. and Vyosim TechLab. Passionate about backend development and full-stack web
