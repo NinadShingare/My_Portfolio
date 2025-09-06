@@ -7,3 +7,4 @@ To run the app
    docker-compose -f docker-compose.yml -f docker-compose.override.yml up(for running later)
 4. open http://localhost:3000/ to view the homepage
 Note: Takes 3-4 mins to run app. Will show error at beginning. Stay patient
+      No need to install postgres it will be fetched from docker
