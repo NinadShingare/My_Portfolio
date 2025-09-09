@@ -21,6 +21,7 @@ export default function HomePage() {
         <p className="mb-6">
           If you'd like to contact me: <span className="font-semibold">nvshingare67@gmail.com</span>
         </p>
+// add google drive resume link of your own resume
         <a
           href="https://drive.google.com/file/d/1s3us55MDrABGHtl2EHQPOaYv3o5o1ZKx/view?usp=sharing"
           className="inline-block bg-gradient-to-r from-blue-800 to-purple-800 text-white px-6 py-2 rounded-lg shadow-lg hover:scale-105 transition"
