@@ -1,10 +1,8 @@
 import axios from 'axios';
 import { Project, Skill } from '@/types';
 
-const API_BASE =
-  typeof window === 'undefined'
-    ? 'http://backend:8080/api'
-    : '/api';
+// In production, we use the environment variable. In development (Docker), we default to the backend service name.
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || (typeof window === 'undefined' ? 'http://backend:8080/api' : '/api');
 
 export async function getProjects(): Promise<Project[]> {
   const res = await axios.get(`${API_BASE}/projects`);

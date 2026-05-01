@@ -12,10 +12,13 @@ const nextConfig = {
     return config;
   },
   async rewrites() {
+    // For local development, we proxy to the backend.
+    // In production, we usually call the API directly via NEXT_PUBLIC_API_URL in api.ts
+    const backendUrl = process.env.BACKEND_URL || 'http://backend:8080';
     return [
       {
         source: '/api/:path*',
-        destination: 'http://backend:8080/api/:path*',
+        destination: `${backendUrl}/api/:path*`,
       }
     ];
   },

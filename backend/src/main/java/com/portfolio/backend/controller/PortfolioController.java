@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000/")// can use @CrossOrigin(origins = "http://localhost:3000/") for dev
+@CrossOrigin(origins = "${ALLOWED_ORIGINS:http://localhost:3000}")
 public class PortfolioController {
 
     private final ProjectRepository projectRepo;
