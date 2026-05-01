@@ -1,6 +1,8 @@
 import SkillCard from '@/components/SkillCard'
 import { getSkills } from '@/lib/api'
 
+export const dynamic = 'force-dynamic'
+
 export default async function SkillsPage() {
   const skills = await getSkills()
 
