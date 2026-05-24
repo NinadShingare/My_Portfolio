@@ -1,7 +1,16 @@
 const timeline = [
-  'AI/ML Engineer at SV IT Global Solutions, building production-oriented multi-agent and migration workflows.',
-  'Former AI/ML Application Developer Intern, delivering chatbot and RAG-based conversational systems.',
-  'Earlier SQL and ETL intern at PRGX India Pvt. Ltd. and Backend Developer Intern at Vyosim TechLab.',
+  {
+    label: 'Current Focus',
+    text: 'As an AI/ML Engineer at SV IT Global Solutions, I build production-oriented intelligent systems, including multi-agent workflows, migration automation, and applied LLM solutions designed for enterprise use cases.',
+  },
+  {
+    label: 'Applied AI Delivery',
+    text: 'My recent work includes conversational AI systems, RAG-based architectures, and automation pipelines that move beyond experimentation into dependable product delivery.',
+  },
+  {
+    label: 'Engineering Foundation',
+    text: 'My background across SQL, ETL, backend development, and API engineering gives me a strong systems mindset when designing scalable AI-enabled applications.',
+  },
 ]
 
 const capabilities = [
@@ -28,10 +37,13 @@ export default function AboutPage() {
 
             <div className="mt-6 space-y-3">
               <span className="badge-brand">Based in Pune, India</span>
-              <h2 className="text-2xl font-extrabold text-neutral-900">Engineer with AI depth and backend rigor</h2>
+              <h2 className="text-2xl font-extrabold text-neutral-900">
+                AI/ML engineer with backend depth and delivery focus
+              </h2>
               <p className="text-sm text-neutral-600">
-                I enjoy solving practical business problems with reliable software systems,
-                not demos that only look good in a prototype.
+                I work best at the intersection of intelligent systems, backend architecture,
+                and product execution, building solutions that are practical, maintainable,
+                and aligned with business outcomes.
               </p>
             </div>
           </div>
@@ -39,21 +51,21 @@ export default function AboutPage() {
           <div className="space-y-7">
             <div>
               <span className="badge-info mb-3 inline-flex">About Me</span>
-              <h1 className="section-heading">A product-minded engineer for modern enterprise teams.</h1>
+              <h1 className="section-heading">An engineer shaped by production work, data systems, and applied AI.</h1>
               <p className="max-w-3xl text-base text-neutral-600">
-                My work combines backend engineering discipline with applied AI execution. I build systems
-                that can move from experimentation to maintainable delivery, especially in areas like LLM workflows,
-                RAG pipelines, enterprise migrations, data processing, and API-led platforms.
+                My profile is built around solving real engineering problems with a combination of backend discipline
+                and applied AI thinking. I have worked across enterprise data workflows, backend platforms, and
+                modern AI systems, with experience turning ideas into usable solutions rather than stopping at prototypes.
               </p>
             </div>
 
             <div className="grid gap-4">
-              {timeline.map((item, index) => (
-                <div key={item} className="glass-card p-5">
+              {timeline.map((item) => (
+                <div key={item.label} className="glass-card p-5">
                   <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-neutral-500">
-                    Phase 0{index + 1}
+                    {item.label}
                   </p>
-                  <p className="mt-2 text-sm text-neutral-700">{item}</p>
+                  <p className="mt-2 text-sm text-neutral-700">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -71,8 +83,8 @@ export default function AboutPage() {
 
             <div className="rounded-3xl border border-blue-100 bg-blue-50/75 px-5 py-5">
               <p className="text-sm text-neutral-700">
-                MCA graduate from Dr. D.Y. Patil Institute of Management and Research, open to relocation and
-                interested in backend, AI platform, and intelligent application engineering opportunities.
+                I bring experience across AI/ML engineering, backend development, and data-intensive systems,
+                and I am open to opportunities in backend, AI platform, and intelligent application engineering teams.
               </p>
               <p className="mt-3 text-sm text-neutral-700">
                 Reach me at{' '}

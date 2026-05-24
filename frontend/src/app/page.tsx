@@ -17,7 +17,7 @@ const highlights = [
 ]
 
 const strengths = [
-  'Generative AI and RAG pipelines',
+  'Built Generative AI and RAG pipelines',
   'Backend systems with Java, Spring Boot, FastAPI, and Node.js',
   'Enterprise data platforms, APIs, and cloud-ready architecture',
 ]
@@ -76,7 +76,7 @@ export default function HomePage() {
             <div>
               <p className="eyebrow-label">What I bring</p>
               <h2 className="mt-3 text-2xl font-extrabold text-neutral-900">
-                A recruiter-friendly snapshot
+                A skillset snapshot
               </h2>
             </div>
 
@@ -105,7 +105,10 @@ export default function HomePage() {
                   'LangGraph',
                   'Next.js',
                   'PostgreSQL',
+                  'MongoDB',
                   'AWS',
+                  'Git',
+                  'Docker',
                 ].map((tech) => (
                   <span key={tech} className="badge-brand">
                     {tech}

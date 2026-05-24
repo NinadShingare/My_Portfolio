@@ -93,7 +93,7 @@ export default function ContactForm() {
       )}
       {status === 'error' && (
         <p className="badge-error justify-center rounded-2xl py-3 text-sm">
-          Message failed to send. Please try again.
+          Message failed to send. Please try again. Or reach me directly on Email or LinkedIn.
         </p>
       )}
     </form>
