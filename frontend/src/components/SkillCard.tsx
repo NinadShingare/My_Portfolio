@@ -1,11 +1,10 @@
 import { Skill } from '@/types'
 
-// Map skill level strings to semantic badge classes
 const levelBadge: Record<string, string> = {
-  expert:        'badge-success',
-  advanced:      'badge-info',
-  intermediate:  'badge-brand',
-  beginner:      'badge-warning',
+  expert: 'badge-success',
+  advanced: 'badge-info',
+  intermediate: 'badge-brand',
+  beginner: 'badge-warning',
 }
 
 function getLevelBadge(level: string): string {
@@ -15,14 +14,19 @@ function getLevelBadge(level: string): string {
 
 export default function SkillCard({ skill }: { skill: Skill }) {
   return (
-    <div className="glass-card flex flex-col gap-3 animate-fade-in-up">
-      <h4 className="text-base font-semibold text-neutral-100 leading-tight">
-        {skill.skillname}
-      </h4>
+    <div className="glass-card flex min-h-[150px] flex-col justify-between gap-5">
+      <div>
+        <p className="eyebrow-label">Skill</p>
+        <h4 className="mt-3 text-xl font-extrabold text-neutral-900 leading-tight">
+          {skill.skillname}
+        </h4>
+      </div>
 
-      <span className={getLevelBadge(skill.level)}>
-        {skill.level}
-      </span>
+      <div>
+        <span className={getLevelBadge(skill.level)}>
+          {skill.level}
+        </span>
+      </div>
     </div>
   )
 }

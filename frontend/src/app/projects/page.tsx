@@ -8,17 +8,18 @@ export default async function ProjectsPage() {
 
   return (
     <div className="space-y-8 animate-fade-in-up">
-      {/* Page header */}
-      <div className="px-1">
-        <span className="badge-brand mb-3 inline-flex">Portfolio</span>
-        <h1 className="section-heading">Projects</h1>
-        <p className="text-neutral-400 text-sm max-w-xl">
-          A selection of things I've built — from backend services to full-stack applications.
-        </p>
+      <div className="section-shell px-6 py-8 sm:px-10">
+        <div className="max-w-3xl">
+          <span className="badge-brand mb-3 inline-flex">Portfolio</span>
+          <h1 className="section-heading">Selected projects with practical engineering value.</h1>
+          <p className="text-base text-neutral-600">
+            A focused set of work across backend systems and full-stack products, showing how I approach
+            architecture, implementation, and delivery quality.
+          </p>
+        </div>
       </div>
 
-      {/* Grid */}
-      <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="grid gap-6 lg:grid-cols-2">
         {projects.map((proj, i) => (
           <div
             key={proj.id}

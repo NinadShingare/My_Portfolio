@@ -21,22 +21,20 @@ const Footer: React.FC = () => {
   ]
 
   return (
-    <footer className="fixed bottom-0 left-0 w-full z-50 border-t border-white/60 bg-white/66 py-3 backdrop-blur-xl">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
-        <p className="text-xs text-neutral-500 tracking-wide">
-          © {new Date().getFullYear()}{' '}
-          <span className="text-neutral-700 font-medium">Ninad Shingare</span>
-          . All rights reserved.
+    <footer className="border-t border-slate-200/80 bg-transparent py-8">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-sm text-neutral-500">
+          © {new Date().getFullYear()} <span className="font-bold text-neutral-800">Ninad Shingare</span>. All rights reserved.
         </p>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-6">
           {links.map(({ href, label, external }) => (
             <Link
               key={href}
               href={href}
               target={external ? '_blank' : undefined}
               rel={external ? 'noopener noreferrer' : undefined}
-              className="text-xs font-medium text-neutral-500 hover:text-brand-700 transition-colors duration-200"
+              className="text-sm font-semibold text-neutral-500 hover:text-brand-700 transition-colors duration-200"
             >
               {label}
             </Link>

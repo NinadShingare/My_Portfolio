@@ -2,18 +2,17 @@ import { Project } from '@/types'
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="glass-card flex flex-col gap-4 animate-fade-in-up">
-      {/* Title */}
-      <h3 className="text-lg font-bold text-neutral-50 leading-snug">
-        {project.title}
-      </h3>
+    <article className="glass-card flex h-full flex-col gap-5">
+      <div className="space-y-3">
+        <p className="eyebrow-label">Project</p>
+        <h3 className="text-2xl font-extrabold text-neutral-900 leading-tight">
+          {project.title}
+        </h3>
+        <p className="text-base text-neutral-600 leading-relaxed">
+          {project.description}
+        </p>
+      </div>
 
-      {/* Description */}
-      <p className="text-sm text-neutral-400 leading-relaxed flex-1">
-        {project.description}
-      </p>
-
-      {/* Tech stack */}
       <div className="flex flex-wrap gap-2">
         {String(project.techStack)
           .split(',')
@@ -26,19 +25,17 @@ export default function ProjectCard({ project }: { project: Project }) {
           ))}
       </div>
 
-      {/* Divider */}
       <div className="divider !my-0" />
 
-      {/* Actions */}
-      <div className="flex items-center gap-3">
+      <div className="mt-auto flex flex-wrap items-center gap-3">
         {project.link && (
           <a
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-xs py-2 px-4"
+            className="btn-primary"
           >
-            Live Demo ↗
+            Live Demo
           </a>
         )}
         {project.github && (
@@ -46,7 +43,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-ghost text-xs py-2 px-4"
+            className="btn-ghost"
           >
             GitHub
           </a>
