@@ -4,16 +4,21 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'My Portfolio',
-  description: 'Showcasing my projects, skills, and experience'
+  title: 'Ninad Shingare — Software Developer',
+  description:
+    'Portfolio of Ninad Shingare — Backend & Full-Stack Software Developer. Explore projects, skills, and get in touch.',
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen text-gray-100">
+      {/*
+        Body background and text color come from globals.css CSS variables
+        (--surface-bg and --text-primary), not ad-hoc Tailwind classes.
+      */}
+      <body className="min-h-screen font-sans antialiased">
         <Navbar />
-        <main className="container mx-auto p-6 pt-20 pb-24">
+        <main className="container mx-auto px-6 pt-24 pb-20">
           {children}
         </main>
         <Footer />

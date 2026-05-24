@@ -2,28 +2,56 @@ import { Project } from '@/types'
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="border rounded-xl p-4 shadow hover:shadow-lg transition glass-container max-w-3xl">
-      <h3 className="text-xl font-semibold">{project.title}</h3>
-      <p className="text-gray-300 dark:text-gray-400">{project.description}</p>
-      TechStack:<p className="text-gray-300 dark:text-gray-400">{project.techStack}</p>
-      <p className="flex gap-4">
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-gradient-to-r from-blue-800 to-purple-800 text-white px-4 py-1 mt-2 rounded-lg shadow-lg hover:scale-105 transition"
-        >
-          View
-        </a>
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-gradient-to-r from-blue-800 to-purple-800 text-white px-4 py-1 mt-2 rounded-lg shadow-lg hover:scale-105 transition"
-        >
-          GitHub
-        </a>
+    <article className="glass-card flex flex-col gap-4 animate-fade-in-up">
+      {/* Title */}
+      <h3 className="text-lg font-bold text-neutral-50 leading-snug">
+        {project.title}
+      </h3>
+
+      {/* Description */}
+      <p className="text-sm text-neutral-400 leading-relaxed flex-1">
+        {project.description}
       </p>
-    </div>
+
+      {/* Tech stack */}
+      <div className="flex flex-wrap gap-2">
+        {String(project.techStack)
+          .split(',')
+          .map((tech) => tech.trim())
+          .filter(Boolean)
+          .map((tech) => (
+            <span key={tech} className="badge-brand">
+              {tech}
+            </span>
+          ))}
+      </div>
+
+      {/* Divider */}
+      <div className="divider !my-0" />
+
+      {/* Actions */}
+      <div className="flex items-center gap-3">
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-xs py-2 px-4"
+          >
+            Live Demo ↗
+          </a>
+        )}
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost text-xs py-2 px-4"
+          >
+            GitHub
+          </a>
+        )}
+      </div>
+    </article>
   )
 }

@@ -1,30 +1,297 @@
+/* ── Google Fonts ──────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Dark theme with subtle background image */
+/* ── Design Token Surface ─────────────────────────────────────────────────── */
+/*
+  All color values below reference Tailwind token names.
+  Never use raw hex directly in components — use these CSS variables or
+  Tailwind's token classes (e.g. text-brand-500, bg-neutral-900).
+*/
 :root {
-  --background: #0a0a0a;
-  --foreground: #e5e5e5;
+  /* Brand */
+  --color-brand:        theme('colors.brand.500');
+  --color-brand-light:  theme('colors.brand.400');
+  --color-brand-dark:   theme('colors.brand.700');
+  --color-brand-muted:  theme('colors.brand.950');
+
+  /* Semantic */
+  --color-success:      theme('colors.success.500');
+  --color-success-bg:   theme('colors.success.900');
+  --color-warning:      theme('colors.warning.400');
+  --color-warning-bg:   theme('colors.warning.900');
+  --color-error:        theme('colors.error.500');
+  --color-error-bg:     theme('colors.error.900');
+  --color-info:         theme('colors.info.400');
+  --color-info-bg:      theme('colors.info.900');
+
+  /* Neutral surface layers */
+  --surface-bg:         theme('colors.neutral.950');
+  --surface-base:       theme('colors.neutral.900');
+  --surface-raised:     theme('colors.neutral.800');
+  --surface-overlay:    theme('colors.neutral.700');
+
+  /* Text */
+  --text-primary:       theme('colors.neutral.50');
+  --text-secondary:     theme('colors.neutral.300');
+  --text-muted:         theme('colors.neutral.500');
+  --text-disabled:      theme('colors.neutral.600');
+
+  /* Border */
+  --border-subtle:      theme('colors.neutral.800');
+  --border-default:     theme('colors.neutral.700');
+  --border-emphasis:    theme('colors.neutral.600');
+  --border-brand:       theme('colors.brand.500');
+
+  /* Glow */
+  --glow-brand:         0 0 16px 2px rgba(47, 102, 246, 0.18);
+  --glow-brand-sm:      0 0 6px 1px  rgba(47, 102, 246, 0.12);
 }
 
-body {
-  background: var(--background) url('/images/Portfolio_Bg1.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: var(--foreground);
-  font-family: 'Inter', sans-serif;
+/* ── Base Reset / Typography ──────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    /* Dark base so the overlay blends smoothly */
+    background-color: #07090f;
+    color: var(--text-primary);
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    min-height: 100vh;
+    position: relative;
+    isolation: isolate;
+  }
+
+  /* Background image — heavily dimmed via a dark overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: url('/images/Portfolio_Bg1.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /* Dark overlay: image shows at ~12% opacity */
+    filter: brightness(0.18) saturate(0.6);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  p, li {
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+
+  a {
+    color: var(--color-brand-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  a:hover { color: var(--color-brand); }
+
+  ::selection {
+    background: var(--color-brand);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+  }
 }
 
-.glass-container {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
-  padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* ── Component Layer ─────────────────────────────────────────────────────── */
+@layer components {
+
+  /* Glass card — the shared surface used by all cards/containers */
+  .glass-card {
+    background: rgba(10, 15, 28, 0.82);          /* near-opaque dark navy */
+    backdrop-filter: blur(18px) saturate(110%);
+    -webkit-backdrop-filter: blur(18px) saturate(110%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .glass-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    border-color: rgba(47, 102, 246, 0.18);      /* brand-500 @ 18% — subtle, not neon */
+  }
+
+  /* Legacy alias — keeps existing JSX working without changes */
+  .glass-container { @apply glass-card; }
+
+  /* ── Buttons ────────────────────────────────────────────────────────────── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.6rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+    color: #fff;
+    background: linear-gradient(135deg, var(--color-brand), var(--color-brand-dark));
+    box-shadow: 0 2px 10px rgba(47, 102, 246, 0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 20px rgba(47, 102, 246, 0.32);
+    filter: brightness(1.1);
+    color: #fff;
+  }
+  .btn-primary:active {
+    transform: scale(0.98);
+    filter: brightness(0.95);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.25rem;
+    border-radius: 0.6rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 1px solid var(--border-default);
+    transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-ghost:hover {
+    color: var(--text-primary);
+    border-color: var(--color-brand);
+    background: rgba(47, 102, 246, 0.08);
+    transform: translateY(-1px);
+  }
+
+  /* ── Form inputs ────────────────────────────────────────────────────────── */
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.625rem;
+    font-size: 0.925rem;
+    color: var(--text-primary);
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid var(--border-default);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+  }
+  .form-input::placeholder { color: var(--text-muted); }
+  .form-input:focus {
+    border-color: var(--color-brand);
+    box-shadow: 0 0 0 3px rgba(47, 102, 246, 0.15);
+  }
+
+  /* ── Status badges ──────────────────────────────────────────────────────── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .badge-success {
+    @apply badge;
+    color: theme('colors.success.400');
+    background: rgba(21, 128, 61, 0.18);
+    border: 1px solid rgba(21, 128, 61, 0.35);
+  }
+  .badge-warning {
+    @apply badge;
+    color: theme('colors.warning.400');
+    background: rgba(180, 83, 9, 0.18);
+    border: 1px solid rgba(180, 83, 9, 0.35);
+  }
+  .badge-error {
+    @apply badge;
+    color: theme('colors.error.400');
+    background: rgba(190, 18, 60, 0.18);
+    border: 1px solid rgba(190, 18, 60, 0.35);
+  }
+  .badge-info {
+    @apply badge;
+    color: theme('colors.info.400');
+    background: rgba(3, 105, 161, 0.18);
+    border: 1px solid rgba(3, 105, 161, 0.35);
+  }
+  .badge-brand {
+    @apply badge;
+    color: theme('colors.brand.300');
+    background: rgba(47, 102, 246, 0.15);
+    border: 1px solid rgba(47, 102, 246, 0.3);
+  }
+
+  /* ── Section heading ────────────────────────────────────────────────────── */
+  .section-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--color-brand-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── Gradient text utility ─────────────────────────────────────────────── */
+  .text-gradient-brand {
+    /* Muted, cooler gradient — less electric, more refined */
+    background: linear-gradient(135deg, theme('colors.brand.300') 0%, theme('colors.info.300') 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Divider ────────────────────────────────────────────────────────────── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border-default), transparent);
+    margin: 2rem 0;
+  }
 }
 
-.glass-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+/* ── Utility Layer ──────────────────────────────────────────────────────── */
+@layer utilities {
+  .animate-delay-100 { animation-delay: 0.1s; }
+  .animate-delay-200 { animation-delay: 0.2s; }
+  .animate-delay-300 { animation-delay: 0.3s; }
+  .animate-delay-400 { animation-delay: 0.4s; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar       { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--surface-bg); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-emphasis);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-brand); }
 }
