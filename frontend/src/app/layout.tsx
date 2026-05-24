@@ -4,18 +4,14 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Ninad Shingare — Software Developer',
+  title: 'Ninad Shingare | AI/ML Engineer',
   description:
-    'Portfolio of Ninad Shingare — Backend & Full-Stack Software Developer. Explore projects, skills, and get in touch.',
+    'Portfolio of Ninad Shingare, an AI/ML Engineer focused on backend systems, intelligent products, and scalable application development.',
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      {/*
-        Body background and text color come from globals.css CSS variables
-        (--surface-bg and --text-primary), not ad-hoc Tailwind classes.
-      */}
       <body className="min-h-screen font-sans antialiased">
         <Navbar />
         <main className="container mx-auto px-6 pt-24 pb-20">

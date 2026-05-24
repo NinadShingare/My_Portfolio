@@ -15,22 +15,20 @@ const Footer: React.FC = () => {
     },
     {
       href: 'mailto:nvshingare67@gmail.com',
-      label: '✉ Email',
+      label: 'Email',
       external: false,
     },
   ]
 
   return (
-    <footer className="fixed bottom-0 left-0 w-full z-50 bg-neutral-900/90 backdrop-blur-md border-t border-neutral-800 py-3">
+    <footer className="fixed bottom-0 left-0 w-full z-50 border-t border-white/60 bg-white/66 py-3 backdrop-blur-xl">
       <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
-        {/* Copyright */}
         <p className="text-xs text-neutral-500 tracking-wide">
           © {new Date().getFullYear()}{' '}
-          <span className="text-neutral-300 font-medium">Ninad Shingare</span>
+          <span className="text-neutral-700 font-medium">Ninad Shingare</span>
           . All rights reserved.
         </p>
 
-        {/* Social links */}
         <div className="flex items-center gap-5">
           {links.map(({ href, label, external }) => (
             <Link
@@ -38,7 +36,7 @@ const Footer: React.FC = () => {
               href={href}
               target={external ? '_blank' : undefined}
               rel={external ? 'noopener noreferrer' : undefined}
-              className="text-xs font-medium text-neutral-400 hover:text-brand-400 transition-colors duration-200"
+              className="text-xs font-medium text-neutral-500 hover:text-brand-700 transition-colors duration-200"
             >
               {label}
             </Link>

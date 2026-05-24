@@ -2,9 +2,8 @@ export default function HomePage() {
   return (
     <section className="flex flex-col items-center justify-center py-16 animate-fade-in-up">
       <div className="glass-card max-w-3xl w-full text-center space-y-6">
-
         {/* Eyebrow */}
-        <span className="badge-brand mx-auto">Available for full-time roles</span>
+        <span className="badge-brand mx-auto">AI/ML Engineer | Open to Relocation</span>
 
         {/* Hero heading */}
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight text-gradient-brand">
@@ -13,22 +12,23 @@ export default function HomePage() {
 
         {/* Role subtitle */}
         <p className="text-xl font-medium text-neutral-300">
-          Software Developer · Backend &amp; Full-Stack
+          AI/ML Engineer | Backend and Intelligent Systems
         </p>
 
         <div className="divider" />
 
         {/* Bio */}
         <p className="text-neutral-400 text-base leading-relaxed">
-          Recent MCA graduate with hands-on internship experience at{' '}
-          <span className="text-neutral-200 font-medium">PRGX India Pvt. Ltd.</span> and{' '}
-          <span className="text-neutral-200 font-medium">Vyosim TechLab</span>. Passionate
-          about backend development and full-stack web application engineering.
+          AI/ML Engineer with 1+ years of experience building robust backend systems,
+          RAG pipelines, and multi-agent workflows. Currently working at{" "}
+          <span className="text-neutral-200 font-medium">SV IT Global Solutions</span>,
+          with earlier experience across AI application development, SQL and ETL, and
+          backend engineering.
         </p>
 
         <p className="text-neutral-400 text-sm leading-relaxed">
-          Skilled in Java · Spring Boot · Hibernate · Kafka · Python · Django · Node.js ·
-          Next.js · MySQL · PostgreSQL · MongoDB · Docker · Linux
+          Focused on Generative AI, LangChain, LangGraph, vector search, Spring Boot,
+          FastAPI, Node.js, Next.js, PostgreSQL, MongoDB, AWS, Docker, Kafka, and Linux.
         </p>
 
         {/* CTA row */}
@@ -39,7 +39,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="btn-primary"
           >
-            Download Resume ↗
+            Download Resume
           </a>
           <a href="/contact" className="btn-ghost">
             Get in Touch
@@ -48,8 +48,11 @@ export default function HomePage() {
 
         {/* Email hint */}
         <p className="text-xs text-neutral-500">
-          Or email me at{' '}
-          <a href="mailto:nvshingare67@gmail.com" className="text-brand-400 hover:text-brand-300 transition-colors">
+          Or email me at{" "}
+          <a
+            href="mailto:nvshingare67@gmail.com"
+            className="text-brand-400 hover:text-brand-300 transition-colors"
+          >
             nvshingare67@gmail.com
           </a>
         </p>
