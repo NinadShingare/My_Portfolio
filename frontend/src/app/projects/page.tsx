@@ -1,7 +1,7 @@
 import ProjectCard from '@/components/ProjectCard'
 import { getProjects } from '@/lib/api'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 3600
 
 export default async function ProjectsPage() {
   const projects = await getProjects()

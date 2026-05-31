@@ -13,6 +13,8 @@ function getLevelBadge(level: string): string {
 }
 
 export default function SkillCard({ skill }: { skill: Skill }) {
+  const level = skill.level ?? 'intermediate'
+
   return (
     <div className="glass-card flex min-h-[150px] flex-col justify-between gap-5">
       <div>
@@ -23,8 +25,8 @@ export default function SkillCard({ skill }: { skill: Skill }) {
       </div>
 
       <div>
-        <span className={getLevelBadge(skill.level)}>
-          {skill.level}
+        <span className={getLevelBadge(level)}>
+          {level}
         </span>
       </div>
     </div>
