@@ -12,3 +12,23 @@ export interface Skill {
   skillname: string
   level?: string
 }
+
+export interface Experience {
+  id: number
+  company: string
+  role: string
+  location: string
+  period: string
+  type: string
+  summary: string
+  achievements: string[]
+  stack: string[]
+}
+
+export interface Certification {
+  id: number
+  title: string
+  issuer: string
+  date: string
+  status?: string
+}

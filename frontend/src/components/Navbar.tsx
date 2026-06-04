@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="flex items-center gap-1 text-sm font-bold text-neutral-600">
           {[
             { href: '/projects', label: 'Projects' },
-            { href: '/skills', label: 'Skills' },
+            { href: '/experience', label: 'Experience' },
             { href: '/about', label: 'About' },
             { href: '/contact', label: 'Contact' },
           ].map(({ href, label }) => (
