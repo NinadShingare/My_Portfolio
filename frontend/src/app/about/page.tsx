@@ -29,7 +29,7 @@ export default function AboutPage() {
             <div className="relative mx-auto w-fit">
               <div className="absolute inset-0 rounded-[2rem] bg-blue-100 blur-2xl" />
               <img
-                src="/images/Ninad_Profile.jpg"
+                src="/images/Ninad_Shingare.jpg"
                 alt="Ninad Shingare"
                 className="relative rounded-[2rem] w-full max-w-[280px] object-cover border border-white/80 shadow-xl"
               />
